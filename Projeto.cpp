@@ -17,7 +17,7 @@ void LeInformacoes(Produtos Prod[10]) { //Cadastro dos produtos
 	}
 }
 
-void LucroMaximo(Produtos Prod[10]) { //VerificaÁ„o de possÌvel faturamento m·ximo
+void LucroMaximo(Produtos Prod[10]) { //Verifica√ß√£o de poss√≠vel faturamento m√°ximo
 	float MaiorValor, FaturamentoMaximo;
 	int MaiorQuantidade, i;
 	
@@ -38,7 +38,7 @@ void ListaProdutos(Produtos Prod[10]) { //Listagem com nome, valor e quantidade 
 	}
 }
 
-void ReporProdutos(Produtos Prod[10]) { //ReposiÁ„o de produtos faltantes
+void ReporProdutos(Produtos Prod[10]) { //Reposi√ß√£o de produtos faltantes
 	int NumeroProdutoReposto;
 	int QuantidadeReposta;
 	char ContinuaRepor;
@@ -48,7 +48,7 @@ void ReporProdutos(Produtos Prod[10]) { //ReposiÁ„o de produtos faltantes
 		cout << "Informe o numero do produto a ser reposto: "; cin >> NumeroProdutoReposto;
 		cout << "Informe a quantidade a ser reposta: "; cin >> QuantidadeReposta;
 		for(int i = 0; i < 10; i++) {
-			if(i == NumeroProdutoReposto) { //VerificaÁ„o do numero do produto para ac˙mulo de quantidade
+			if(i == NumeroProdutoReposto) { //Verifica√ß√£o do numero do produto para ac√∫mulo de quantidade
 				Prod[i].Quantidade += QuantidadeReposta;
 			}
 		}		
@@ -56,7 +56,7 @@ void ReporProdutos(Produtos Prod[10]) { //ReposiÁ„o de produtos faltantes
 	} while(ContinuaRepor == 'S');
 }
 
-void EscolhaCompra(Produtos Prod[10]) { //Escolha dos produtos pelo usu·rio
+void EscolhaCompra(Produtos Prod[10]) { //Escolha dos produtos pelo usu√°rio
 	int NumeroProdutoCompra, QuantidadeCompra;
 	float ValorPago, ValorTotal, ValorMaquina, ValorTroco;
 	char Continuar, Troco;
@@ -64,33 +64,33 @@ void EscolhaCompra(Produtos Prod[10]) { //Escolha dos produtos pelo usu·rio
 	do {
 		for(int i = 0; i < 10; i++) {
 			cout << "  ----PRODUTO[" << i << "]----" << endl;
-			cout << "Nome: " << Prod[i].Nome << endl; //ExibiÁ„o dos produtos cadastrados
-			cout << "Valor: R$" << Prod[i].Valor << endl; //ExibiÁ„o dos produtos cadastrados
-			cout << "Quantidade: " << Prod[i].Quantidade << endl; //ExibiÁ„o dos produtos cadastrados
+			cout << "Nome: " << Prod[i].Nome << endl; //Exibi√ß√£o dos produtos cadastrados
+			cout << "Valor: R$" << Prod[i].Valor << endl; //Exibi√ß√£o dos produtos cadastrados
+			cout << "Quantidade: " << Prod[i].Quantidade << endl; //Exibi√ß√£o dos produtos cadastrados
 			cout << endl;
 		}
 		cout << "Informe o numero do produto que deseja comprar: "; cin >> NumeroProdutoCompra;
-		if(NumeroProdutoCompra > 10) { //VerificaÁ„o do Ìndice informado pelo usu·rio
+		if(NumeroProdutoCompra > 10) { //Verifica√ß√£o do √≠ndice informado pelo usu√°rio
 			cout << "Informe um numero valido!!!";
 			break;
 		}
 		cout << "Informe a quantidade que deseja comprar: "; cin >> QuantidadeCompra;
-		if(QuantidadeCompra > Prod[NumeroProdutoCompra].Quantidade) { //VerificaÁ„o se a quantidade desejada est· dentro do estoque 
+		if(QuantidadeCompra > Prod[NumeroProdutoCompra].Quantidade) { //Verifica√ß√£o se a quantidade desejada est√° dentro do estoque 
 			cout << "Quantidade insuficiente!!!";
 			break;
 		}
 		for(int i = 0; i < 10; i++) {
 			if(i == NumeroProdutoCompra) {
-				Prod[i].Quantidade -= QuantidadeCompra;	//DecrÈscimo da quantidade do produto em caso de compra
+				Prod[i].Quantidade -= QuantidadeCompra;	//Decr√©scimo da quantidade do produto em caso de compra
 			}	
 		}
-		ValorPago = Prod[NumeroProdutoCompra].Valor * QuantidadeCompra; //C·lculo do valor pago pelo produto
+		ValorPago = Prod[NumeroProdutoCompra].Valor * QuantidadeCompra; //C√°lculo do valor pago pelo produto
 		cout << "O valor a ser pago eh de R$" << ValorPago << endl;
 		cout << endl;
 		cout << "Deseja continuar a compra? (S/N)"; cin >> Continuar;
 		cout << endl;
 		}
-		ValorTotal += ValorPago; //Ac˙mulo do valor total da compra
+		ValorTotal += ValorPago; //Ac√∫mulo do valor total da compra
 	} while(Continuar == 'S');
 	
 	cout << "O valor total da compra foi de R$" << ValorTotal << endl;
@@ -121,7 +121,7 @@ int main(int argc, char** argv) {
 	cout << "------MODO ADMINISTRADOR-------" << endl;
 	
 	do {	
-		LeInformacoes(Prod); //Leitura dos itens disponÌveis
+		LeInformacoes(Prod); //Leitura dos itens dispon√≠veis
 	
 		cout << endl;
 		cout << "Selecione uma opcao: " << endl;
@@ -132,13 +132,13 @@ int main(int argc, char** argv) {
 		cout << endl;
 		
 		if(Opcao == 0) {
-			ReporProdutos(Prod); //OpÁ„o de repÙr itens
+			ReporProdutos(Prod); //Op√ß√£o de rep√¥r itens
 		}
 		else if(Opcao == 1) {
 			ListaProdutos(Prod); //Listagem de produtos
 		}
 		else if(Opcao == 2) {
-			LucroMaximo(Prod); //Faturamento m·ximo
+			LucroMaximo(Prod); //Faturamento m√°ximo
 		}
 		else {
 			cout << "Informe uma opcao valida!!!";
@@ -151,7 +151,7 @@ int main(int argc, char** argv) {
 	
 	do {
 		cout << "------MODO USUARIO------" << endl;
-		EscolhaCompra(Prod); //Entrada no modo usu·rio
+		EscolhaCompra(Prod); //Entrada no modo usu√°rio
 		cout << endl;
 		cout << "Deseja permanecer no modo usuario? (S/N)"; cin >> Modo;
 	} while(Modo == 'S');
